@@ -16,3 +16,16 @@ const images = [
 // находим куда нужно поместить
 const needingPlace = document.querySelector("#gallery");
 console.log(needingPlace);
+
+const makeLiImg = images.map((image) => {
+  const li = document.createElement("li");
+  console.log(li);
+  const img = document.createElement("img");
+  img.url = image.url;
+  img.alt = image.alt;
+
+  li.appendChild(img);
+  // console.log(li.children);
+
+  return needingPlace.insertAdjacentHTML("afterbegin", li);
+});

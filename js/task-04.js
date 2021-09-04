@@ -1,15 +1,21 @@
 const valueEl = document.querySelector("#value");
+let value = 0;
+console.log(valueEl.textContent);
 
-const x = 0;
-const increment = document.querySelector("#counter.datased.increment");
-const decrement = document.querySelector("#counter.datased.decrement");
+const container = document.querySelectorAll("#counter button");
+console.log(container);
+
+const decrement = container[0];
+console.log(decrement);
+
+const increment = container[1];
 console.log(increment);
+
 increment.addEventListener("click", function () {
-  // this function is executed whenever the user clicks the increment button
-  valueEl.textContent = x += 1;
+  valueEl.textContent = value += 1;
 });
 
 decrement.addEventListener("click", function () {
   // this function is executed whenever the user clicks the decrement button
-  span.textContent = x -= 1;
+  valueEl.textContent = value -= 1;
 });
