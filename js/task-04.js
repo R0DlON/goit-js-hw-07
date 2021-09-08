@@ -2,14 +2,9 @@ const valueEl = document.querySelector("#value");
 let value = 0;
 console.log(valueEl.textContent);
 
-const container = document.querySelectorAll("#counter button");
-console.log(container);
-
-const decrement = container[0];
+const decrement = document.querySelector('button[data-action="decrement"]');
 console.log(decrement);
-
-const increment = container[1];
-console.log(increment);
+const increment = document.querySelector('button[data-action="increment"]');
 
 increment.addEventListener("click", function () {
   valueEl.textContent = value += 1;

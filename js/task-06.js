@@ -1,5 +1,5 @@
 const inputEl = document.querySelector("#validation-input");
-console.log(inputEl);
+// console.log(inputEl);
 
 console.log(inputEl.value.length);
 console.log(inputEl.dataset.length);
@@ -9,10 +9,23 @@ console.log(inputEl.dataset.length);
 // }
 // console.log(add(inputEl, "newClass"));
 function qaOfLetters(event) {
-  if (event.currentTarget.value.length === event.dataset.length) {
-    return event.classList.add(".validation - input.valid");
+  console.log(event.currentTarget.value.length);
+  const trueString = document.querySelector(".valid");
+  const falseString = document.querySelector(".invalid");
+  if (trueString) {
+    trueString.classList.remove("valid");
   }
-  return event.classList.add(".validation - input.invalid");
+  if (falseString) {
+    falseString.classList.remove("invalid");
+  }
+
+  if (
+    event.currentTarget.value.length ===
+    Number(event.currentTarget.dataset.length)
+  ) {
+    return event.currentTarget.classList.add("valid");
+  }
+  return event.currentTarget.classList.add("invalid");
 }
 inputEl.addEventListener("change", qaOfLetters);
 // function qaOfLetters(event) {

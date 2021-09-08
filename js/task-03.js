@@ -27,5 +27,5 @@ const makeLiImg = images.map((image) => {
   li.appendChild(img);
   // console.log(li.children);
 
-  return needingPlace.insertAdjacentHTML("afterbegin", li);
+  return needingPlace.appendChild(li);
 });
